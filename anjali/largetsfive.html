@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title> Largets of Five numbers </title>
+</head>
+<body>
+	<input type = "text" id="A">
+	<input type = "text" id="B">
+	<input type = "text" id="C">
+	<input type = "text" id="D">
+	<input type = "text" id="E">
+	<input type = "submit" id="btn" onclick="large5()">
+	<p id="demo"></p>
+<script type="text/javascript">	
+	function large5()
+	{	
+		var a = document.getElementById("A").value;
+		var b = document.getElementById("B").value;
+		var c = document.getElementById("C").value;
+		var d = document.getElementById("D").value;
+		var e = document.getElementById("E").value; 
+		if(a>b && a>c && a>d && a>e)
+		{
+			alert(a);
+		}
+		else if (b>a && b>c && b>d && b>e)
+		{
+    		alert(b);
+		}
+		else if (c>a && c>b && c>d && c>e)
+		{
+		   alert(c);
+		}
+		else if (d>a && d>c && d>b && d>e)
+		{
+    		alert(d);
+		}
+		else
+		{
+    		alert(e);
+		}
+	}
+</script>
+</body>
+</html>
