@@ -12,7 +12,18 @@
 		{
 
 		}
-
+		#frm
+		{
+			text-align: center;
+		}
+		/*#listoffiles
+		{
+			text-align: center;
+		}*/
+		#myFile,#getfile
+		{
+			display: inline-block;
+		}
 	</style>
 	
 </head>
@@ -32,55 +43,44 @@
 		</div>
 	</nav>
 	
-	<form>
-		<input type="file" name="texts" id="myFile" accept=".txt,.png,.pdf,.doc,.docx,jpg"><br><br>
-		<!-- <input type="submit" value="Submit" onclick="addfiles();"><br><br>
-	 -->
-		<a href="C:\Users\Anjali5694\Desktop\frontend\js\Frontend\anjali" download="para">Download</a>
+	<form type= "accept-file.php" method="post" id="frm">
+		<input type="file" name="texts" id="myFile" accept=".txt,.doc,.docx,.png,.jpg">
+		<!-- <input type="submit" name="submit" value="Submit" onclick="addfiles();"><br><br> -->
+		<a href="C:\Users\Anjali5694\Desktop\frontend\js\Frontend\anjali" download="para" id="getfile">Download</a>
 	</form>
-		<h4>Files Uploaded</h4>
+		<br><br>
+		
 		<div id="listoffiles">
-
+			<h4>Files Uploaded</h4>
 		</div>
 		<!-- <table id="Uploaded" style="border:1px solid black">
 
 		</table> -->
 
 	<script>
-		const input = document.querySelector('input[type="file"')
+		var count = 0
+		const input = document.querySelector('input[type="file"]')
 		input.addEventListener('change',function(e)
 		{
-			console.log(input.files)
-			const reader = new FileReader()
-			reader.onload = function(){
-				/*const lines = reader.result.split('\n').map(function(line)
-				{
-					return line.split(',')
-				})
-				console.log(lines)*/
-				const img = new Image()
-				/*img.onload = function()
-				{
-
-				}*/
-				img.src = reader.result
-				document.form.appendChild(img)
-			}
-			/*reader.readAsText(input.files[0])*/
-			reader.readAsDataURL(input.files[0])
-		},false)
-		/*function addfiles()
-		{
-			for(var i=0;i<5;i++)
+			console.log(input.files) //get the filles in console
+			const reader = new FileReader() // new reader
+			reader.onload = function()
 			{
-			var collection = document.getElementById("myFile").value; //C:/file/para.txt
-			var text = document.getElementById("Uploaded").appendChild(document.createElement('tr'));
-			var text2 = document.createTextNode(collection);
-			text.appendChild(text2);
-			document.getElementById("Uploaded").appendChild(text);
+				const img = new Image()
+				img.src = reader.result
+				img.style.height = "150px"
+				img.style.width="250px"
+				var a = document.createElement('a')
+				var newline= document.createElement('br')
+				a.appendChild(img)
+				count++
+				a.text = "image"+count
+				a.href = img.src
+				document.body.appendChild(a).appendChild(newline)
 			}
-			//document.getElementById("demo").innerHTML = collection;
-		}	*/
+			reader.readAsDataURL(input.files[0]) //read as text
+		},false)
+
 	</script>
 </body>
 </html>
