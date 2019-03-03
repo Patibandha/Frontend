@@ -5,3 +5,7 @@ Write a JavaScript conditional statement to find the largest of five numbers. Di
 
 Sample numbers : -5, -2, -6, 0, -1 
 Output : 0
+
+assignment 3/3/2019
+Write down difference between =, == and ===
+write difference between slice(), substring() and substr() in JS
