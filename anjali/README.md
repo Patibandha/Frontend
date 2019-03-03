@@ -11,3 +11,7 @@ assignment 3/3/2019
 Write down difference between =, == and ===
 
 write difference between slice(), substring() and substr() in JS
+
+What is normalization of string in JS?
+
+
